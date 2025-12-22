@@ -1,0 +1,98 @@
+.shine-btn {
+  position: relative;
+  z-index: 2;
+
+  background: transparent;
+  color: #fdfdfd;
+
+  border: 1px solid rgba(255, 255, 255, 0.6);
+
+  padding: 20px 64px;
+  font-size: 1.6rem;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  backdrop-filter: blur(6px);
+
+  transition: all 0.45s ease;
+
+  isolation: isolate;
+}
+
+/* brilho dourado suave */
+.shine-btn::before {
+  content: "";
+  position: absolute;
+  inset: -6px;
+
+  border-radius: 6px;
+
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 215, 160, 0.35),
+    transparent
+  );
+
+  opacity: 0.25;
+  filter: blur(10px);
+
+  z-index: -1;
+}
+
+.shine-btn:hover {
+  letter-spacing: 7px;
+  border-color: #ffd7a0;
+}
+
+.shine-btn:active {
+  transform: scale(0.96);
+}
+
+.shine-btn:hover {
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+}
+
+.intro {
+  position: fixed;
+  inset: 0;
+
+  background: radial-gradient(
+    circle at center,
+    #0f1a16 0%,
+    #000000 70%
+  );
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+  z-index: 10;
+}
+.light-overlay {
+  position: absolute;
+
+  width: 220vmax;
+  height: 220vmax;
+
+  background: radial-gradient(
+    circle,
+    rgba(255, 245, 220, 0.95) 0%,
+    rgba(255, 245, 220, 0.9) 35%,
+    rgba(0, 0, 0, 0.85) 60%
+  );
+
+  transform: scale(0);
+  opacity: 0;
+
+  transition:
+    transform 2.6s ease-out,
+    opacity 2.2s ease-out;
+
+  border-radius: 50%;
+}
+

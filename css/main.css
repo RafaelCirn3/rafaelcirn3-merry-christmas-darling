@@ -1,0 +1,77 @@
+html {
+  scrollbar-gutter: stable;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  overscroll-behavior: none;
+
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+
+  background:
+    radial-gradient(
+      circle at top,
+      rgba(255, 215, 160, 0.45),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at top,
+      #4a0f14 0%,
+      #2b0508 35%,
+      #140002 100%
+    );
+  color: rgba(255, 215, 160, 0.75);
+
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Estados genéricos */
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* CONTEÚDO PRINCIPAL */
+.content {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* CENTRALIZA VERTICALMENTE */
+  align-items: center;
+
+  padding: 40px 0; /* respiro elegante */
+
+  opacity: 0;
+  transform: translateY(36px);
+
+  transition:
+    opacity 1.8s ease,
+    transform 1.8s ease;
+}
+
+/* Quando ativado */
+.content.visible {
+  opacity: 1;
+  transform: translateY(0);
+
+    background:
+    radial-gradient(
+      circle at top,
+      rgba(255, 215, 160, 0.45),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at top,
+      #4a0f14 0%,
+      #2b0508 35%,
+      #140002 100%
+    );
+}
